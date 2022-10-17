@@ -6,3 +6,4 @@ source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/config/alias.zsh
 source $ZSH/config/base.zsh
+source $ZSH/config/export.zsh
