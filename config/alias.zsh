@@ -30,6 +30,11 @@ alias slg='slackpkg update gpg'
 alias slu='slackpkg update'
 alias slnew='slackpkg install-new'
 alias sla='slackpkg upgrade-all'
+alias sls='slackpkg search'
+
+# deb/rpm Conversion
+alias debc='deb2tgz'
+alias rpmc='rmp2tgz'
 
 
 # ---- ---- ---- ---- ---- ---- ---- ----
