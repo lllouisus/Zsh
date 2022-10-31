@@ -51,6 +51,7 @@ alias ems='emerge -s'
 alias emw='doas emerge -avuDN @world'
 alias emD='doas emerge -D'
 alias emN='doas emerge -N'
+alias emp='emerge -p'
 
 alias emd='doas emerge --deselect'
 alias emc='doas emerge -avc'
