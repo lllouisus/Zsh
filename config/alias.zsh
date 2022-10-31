@@ -26,15 +26,15 @@ alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | hea
 alias vi='nvim'
 
 # ---- ---- ---- ---- KISS ---- ---- ---- ----
-alias slg='slackpkg update gpg'
-alias slu='slackpkg update'
-alias slnew='slackpkg install-new'
-alias sla='slackpkg upgrade-all'
-alias sls='slackpkg search'
+# alias slg='slackpkg update gpg'
+# alias slu='slackpkg update'
+# alias slnew='slackpkg install-new'
+# alias sla='slackpkg upgrade-all'
+# alias sls='slackpkg search'
 
 # deb/rpm Conversion
-alias debc='deb2tgz'
-alias rpmc='rmp2tgz'
+# alias debc='deb2tgz'
+# alias rpmc='rmp2tgz'
 
 
 # ---- ---- ---- ---- ---- ---- ---- ----
@@ -46,22 +46,28 @@ alias ll='lsd -lah'
 alias ld='lsd -ld'
 
 # emerge 
-# alias em='doas emerge -av'
-# alias ems='emerge -s'
-# alias emw='doas emerge -avuDN @world'
-# alias emc='doas emerge -avc'
-# alias emC='doas emerge -C'
-# alias eup='doas etc-update --automode -3'
+alias em='doas emerge -av'
+alias ems='emerge -s'
+alias emw='doas emerge -avuDN @world'
+alias emD='emerge -D'
+alias emN='emerge -N'
+
+alias emd='doas emerge --deselect'
+alias emc='doas emerge -avc'
+
+alias emC='doas emerge -C'  # 会删除依赖包，慎用
+
+alias emup='doas etc-update --automode -3'
+
+# eix search
 
 # equery
-# alias eq='equery'
+alias eq='equery'
 
 # sync
-alias emsy='doas emerge --sync'
+alias emsync='doas emerge --sync'
 
 # ---- ---- ---- ---- ---- ---- ----
-
-
 # reflash
 alias fz='source ~/.zshrc'
 
@@ -86,8 +92,3 @@ alias sp='/opt/./speedtest'
 
 # net
 alias cg='curl -i google.com'
-
-# Screenshot
-# alias sc="import"
-# alias scc="import -window root"
-
