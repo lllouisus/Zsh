@@ -1,14 +1,3 @@
-# 启用彩色提示符
-autoload -U colors && colors
-
-# 每次刷新提示符
-setopt prompt_subst
-
-# 设置提示符
-PROMPT='%F{120} %f%B%F{240}%2~%f%b %{$fg[blue]%}$(git branch --show-current 2&> /dev/null | xargs -I branch echo "(branch)")%{$reset_color%} '
-
-#右侧
-RPROMPT='%*'
 # --------------------------------------------------------------------------
 
 alias proxy="export http_proxy=http://127.0.0.1:8889;export https_proxy=http://127.0.0.1:8889"
@@ -18,10 +7,10 @@ alias sghttps="git config --global http.proxy http://127.0.0.1:7890;git config -
 
 alias we="curl wttr.in/Guangxi"
 alias ra='ranger'
-alias fa='fzf --preview "bat -p --color=always {} | head -100" --height 40%'
+alias fa='fzf --preview "bat -p --color=always {} | head -100" --height 30%'
 alias ma='btop'
-alias ca='cd $(find ~/ -type d | fzf)'
-alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | head -100" --height 40%)'
+alias ca='cd $(find ~/ -type d | fzf --height 40%)'
+alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | head -100" --height 30%)'
 
 alias vi='nvim'
 
@@ -41,9 +30,10 @@ alias vi='nvim'
 
 # ---- ---- ---- GENTOO ---- ---- ----
 # ls
-alias l='lsd -a'
-alias ll='lsd -lah'
-alias ld='lsd -ld'
+alias l='exa -ag -s name'
+alias ll='exa -llag -s name --icons'
+alias ld='exa -lgd -s name --icons'
+alias lt='exa -la --no-user --no-time --no-filesize --no-permissions  -T'
 
 # emerge 
 alias em='doas emerge -av'
@@ -74,18 +64,6 @@ alias fz='source ~/.zshrc'
 
 # tty-clock
 alias cl='tty-clock -s -c -b -C 4'
-
-# Git
-alias gg="git clone"
-alias gad='git add .'
-alias gcm='git commit -m'
-alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gcom='git checkout master'
-alias grg='git reflog'
-alias gbr='git branch'
-alias gst='git status'
-alias gp='git push'
 
 # speedtest
 alias sp='/opt/./speedtest'
