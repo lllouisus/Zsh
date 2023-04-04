@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------
 
-alias proxy="export http_proxy=http://127.0.0.1:8889;export https_proxy=http://127.0.0.1:8889"
+alias proxy="export http_proxy=http://127.0.0.1:7890;export https_proxy=http://127.0.0.1:7890"
 alias unproxy="unset http_proxy;unset https_proxy;"
 alias sgsocks="git config --global http.proxy 'socks5://127.0.0.1:1089';git config --global https.proxy 'socks5://127.0.0.1:1089'"
 alias sghttps="git config --global http.proxy http://127.0.0.1:7890;git config --global https.proxy https://127.0.0.1:7890"
@@ -14,27 +14,33 @@ alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | hea
 
 alias vi='nvim'
 
-# ---- ---- ---- ---- KISS ---- ---- ---- ----
-# alias slg='slackpkg update gpg'
-# alias slu='slackpkg update'
-# alias slnew='slackpkg install-new'
-# alias sla='slackpkg upgrade-all'
-# alias sls='slackpkg search'
-
-# deb/rpm Conversion
-# alias debc='deb2tgz'
-# alias rpmc='rmp2tgz'
+MK() { mkdir -p "$1"; cd "$1";} 
 
 
-# ---- ---- ---- ---- ---- ---- ---- ----
 
-# ---- ---- ---- GENTOO ---- ---- ----
+# ---- ---- ---- Void ---- ---- ----
+alias xp='doas xbps-install'
+alias xpR='doas xbps-remove -R'
+xps() { xbps-query -l | awk '{ print $2 }' | xargs -n1 xbps-uhelper getpkgname | fzf; }
+xpss() { xbps-query -Rs "" | fzf; }
+
+alias xrc='bash ~/.config/void-packages/xbps-src pkg'
+alias xr='doas xbps-install --repository=hostdir/binpkgs'
+
+# alias xs='xbps-query -l | $(awk '{ print $2 }') | xargs -n1 xbps-uhelper getpkgname | fzf'
+# alias xss="xbps-query_fzf() { xbps-query -l | $(awk '{ print $2 }') | xargs -n1 xbps-uhelper getpkgname | fzf; }; xbps-query_fzf "
+# alias xs='bash ~/xs.sh'
+alias debc='xdeb -Sde'
+alias debi='doas xbps-install -R'
+# alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | head -100" --height 30%)'
+
 # ls
 alias l='exa -ag -s name'
 alias ll='exa -llag -s name --icons'
 alias ld='exa -lgd -s name --icons'
 alias lt='exa -la --no-user --no-time --no-filesize --no-permissions  -T'
 
+# ---- ---- ---- GENTOO ---- ---- ----
 # emerge 
 alias em='doas emerge -av'
 alias ems='emerge -s'
