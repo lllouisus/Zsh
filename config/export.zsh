@@ -1,6 +1,8 @@
 export PATH=/home/louis/.local/bin:$PATH
 
 # -------------EXPORT______________________________________________________________
+export http_proxy=http://127.0.0.1:8889
+export https_proxy=http://127.0.0.1:8889
 
 # rofi
 export LC_ALL="en_US.UTF-8"
