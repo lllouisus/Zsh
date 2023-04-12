@@ -26,7 +26,7 @@ xba() { xbps-query -l | awk '{ print $2 }' | xargs -n1 xbps-uhelper getpkgname |
 xbq() { xbps-query -Rs "" | fzf; }
 
 alias xrc='bash ~/.config/void-packages/xbps-src pkg'
-alias xr='doas xbps-install --repository=hostdir/binpkgs'
+alias xr='doas xbps-install --repository=~/.config/void-packages/hostdir/binpkgs'
 
 # alias xs='xbps-query -l | $(awk '{ print $2 }') | xargs -n1 xbps-uhelper getpkgname | fzf'
 # alias xss="xbps-query_fzf() { xbps-query -l | $(awk '{ print $2 }') | xargs -n1 xbps-uhelper getpkgname | fzf; }; xbps-query_fzf "
