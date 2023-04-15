@@ -19,6 +19,7 @@ norman() { setxkbmap us -variant norman;}
 qwerty() { setxkbmap us;}
 
 
+
 # ---- ---- ---- Void ---- ---- ----
 alias xbi='doas xbps-install'
 alias xbr='doas xbps-remove -R'
