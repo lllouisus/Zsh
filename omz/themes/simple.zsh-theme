@@ -5,7 +5,7 @@ autoload -U colors && colors
 setopt prompt_subst
 
 # 设置提示符
-PROMPT='%F{120} %f%B%F{240}%2~%f%b %{$fg[blue]%}$(git branch --show-current 2&> /dev/null | xargs -I branch echo "(branch)")%{$reset_color%} '
+PROMPT='%F{120} %f%B%F{240}%5~%f%b %{$fg[blue]%}$(git branch --show-current 2&> /dev/null | xargs -I branch echo "(branch)")%{$reset_color%} '
 
 #右侧
 RPROMPT='%*'

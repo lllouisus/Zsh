@@ -12,12 +12,9 @@ alias ma='btop'
 alias ca='cd $(find ~/ -type d | fzf --height 40%)'
 alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | head -100" --height 30%)'
 
-alias vi='nvim'
-
 MK() { mkdir -p "$1"; cd "$1";} 
 norman() { setxkbmap us -variant norman;}
 qwerty() { setxkbmap us;}
-
 
 
 # ---- ---- ---- Void ---- ---- ----
@@ -28,9 +25,6 @@ xbq() { xbps-query -Rs "" | fzf; }
 
 alias xrc='bash ~/.config/void-packages/xbps-src pkg'
 alias xr='doas xbps-install --repository=~/.config/void-packages/hostdir/binpkgs'
-
-# alias xs='xbps-query -l | $(awk '{ print $2 }') | xargs -n1 xbps-uhelper getpkgname | fzf'
-# alias xss="xbps-query_fzf() { xbps-query -l | $(awk '{ print $2 }') | xargs -n1 xbps-uhelper getpkgname | fzf; }; xbps-query_fzf "
 alias debc='xdeb -Sde'
 alias debi='doas xbps-install -R'
 
@@ -43,21 +37,18 @@ alias lt='exa -la --no-user --no-time --no-filesize --no-permissions  -T'
 # ---- ---- ---- GENTOO ---- ---- ----
 # emerge 
 # alias em='doas emerge -av'
+# em() { doas  emerge $(eix -c --pure-packages | fzf | cut -d ' ' -f2); }
 # alias ems='emerge -s'
 # alias emw='doas emerge -avuDN @world'
 # alias emD='doas emerge -D'
 # alias emN='doas emerge -N'
 # alias emp='emerge -p'
-
 # alias emd='doas emerge --deselect'
 # alias emc='doas emerge -avc'
-
 # alias emC='doas emerge -C'  # 会删除依赖包，慎用
-
 # alias emup='doas etc-update --automode -3'
 
 # eix search
-
 # equery
 # alias eq='equery'
 
