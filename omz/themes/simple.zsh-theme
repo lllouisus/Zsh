@@ -5,10 +5,10 @@ autoload -U colors && colors
 setopt prompt_subst
 
 # 设置提示符
-PROMPT='%F{120} %f%B%F{240}%5~%f%b %{$fg[blue]%}$(git branch --show-current 2&> /dev/null | xargs -I branch echo "(branch)")%{$reset_color%} '
+PROMPT='%F{100}%n%F{8}@%F{106}%M:%f%B%F{70}%10~%f%b %{$fg[blue]%}$(git branch --show-current 2&> /dev/null | xargs -I branch echo "(branch)")%{$reset_color%} '
 
 #右侧
-RPROMPT='%*'
+#RPROMPT='%*'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]"

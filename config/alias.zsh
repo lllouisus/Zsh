@@ -10,11 +10,18 @@ alias sa='ranger'
 alias fa='fzf --preview "bat -p --color=always {} | head -100" --height 30%'
 alias ma='btop'
 alias ca='cd $(find ~/ -type d | fzf --height 40%)'
-alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | head -100" --height 30%)'
+# alias va='nvim $(find ~/ -type f | fzf --preview "bat -p --color=always {} | head -100" --height 30%)'
 
-MK() { mkdir -p "$1"; cd "$1";} 
-norman() { setxkbmap us -variant norman;}
+MK() { mkdir -p "$1"; cd "$1";}
+CM() { setxkbmap us -variant colemak_dh;}
+KK() { setxkbmap halmak_no_qwerty;}
 qwerty() { setxkbmap us;}
+
+
+# Emacs
+alias vim="emacsclient -c -a 'emacs'"
+kemacs() { emacsclient -e "(kill-emacs)"; }
+eemacs() { /usr/bin/emacs --daemon &; }
 
 
 # ---- ---- ---- Void ---- ---- ----
@@ -22,6 +29,7 @@ alias xbi='doas xbps-install'
 alias xbr='doas xbps-remove -R'
 xba() { xbps-query -l | awk '{ print $2 }' | xargs -n1 xbps-uhelper getpkgname | fzf; }
 xbq() { xbps-query -Rs "" | fzf; }
+
 
 alias xrc='bash ~/.config/void-packages/xbps-src pkg'
 alias xr='doas xbps-install --repository=~/.config/void-packages/hostdir/binpkgs'
@@ -35,7 +43,7 @@ alias ld='exa -lgd -s name --icons'
 alias lt='exa -la --no-user --no-time --no-filesize --no-permissions  -T'
 
 # ---- ---- ---- GENTOO ---- ---- ----
-# emerge 
+# emerge
 # alias em='doas emerge -av'
 # em() { doas  emerge $(eix -c --pure-packages | fzf | cut -d ' ' -f2); }
 # alias ems='emerge -s'
