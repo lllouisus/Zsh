@@ -6,7 +6,7 @@ alias sgsocks="git config --global http.proxy 'socks5://127.0.0.1:1089';git conf
 alias sghttps="git config --global http.proxy http://127.0.0.1:7890;git config --global https.proxy https://127.0.0.1:7890"
 
 alias we="curl wttr.in/Guangxi"
-alias sa='ranger'
+alias sa='joshuto'
 alias fa='fzf --preview "bat -p --color=always {} | head -100" --height 30%'
 alias ma='btop'
 alias ca='cd $(find ~/ -type d | fzf --height 40%)'
